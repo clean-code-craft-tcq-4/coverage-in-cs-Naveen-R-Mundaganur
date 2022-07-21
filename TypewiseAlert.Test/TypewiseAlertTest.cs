@@ -22,6 +22,12 @@ namespace TypewiseAlert.Test
         TypewiseAlert.BreachType.NORMAL);
       Assert.True(TypewiseAlert.inferBreach(25, 20, 40) ==
         TypewiseAlert.BreachType.NORMAL);
+      
+      //Email Validation
+      Assert.True(TypewiseAlert.sendToEmail(TypewiseAlert.BreachType.TOO_LOW)=="too low");
+      Assert.True(TypewiseAlert.sendToEmail(TypewiseAlert.BreachType.TOO_HIGH)=="too high");
+      Assert.True(TypewiseAlert.sendToEmail(TypewiseAlert.BreachType.NORMAL)=="normal");       
+        
     }
   }
 }
