@@ -29,8 +29,8 @@ namespace TypewiseAlert.Test
       Assert.True(TypewiseAlert.sendToEmail(TypewiseAlert.BreachType.NORMAL)=="normal");    
       
       //Alert Check
-      Assert.True(TypewiseAlert.checkAndAlert(TypewiseAlert.AlertTarget.TO_CONTROLLER, new TypewiseAlert.BatteryCharacter(TypewiseAlert.CoolingType.PASSIVE_COOLING),58.5d);
-      Assert.True(TypewiseAlert.checkAndAlert(TypewiseAlert.AlertTarget.TO_EMAIL, new TypewiseAlert.BatteryCharacter(TypewiseAlert.CoolingType.HI_ACTIVE_COOLING), 42);
+      Assert.True(TypewiseAlert.checkAndAlert(TypewiseAlert.AlertTarget.TO_CONTROLLER, new TypewiseAlert.BatteryCharacter(TypewiseAlert.CoolingType.PASSIVE_COOLING),58.5d));
+      Assert.True(TypewiseAlert.checkAndAlert(TypewiseAlert.AlertTarget.TO_EMAIL, new TypewiseAlert.BatteryCharacter(TypewiseAlert.CoolingType.HI_ACTIVE_COOLING), 42));
         
     }
   }
