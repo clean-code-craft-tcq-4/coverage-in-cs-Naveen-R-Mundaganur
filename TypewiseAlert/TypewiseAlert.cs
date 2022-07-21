@@ -95,12 +95,8 @@ namespace TypewiseAlert
       else if(breachType==BreachType.TOO_HIGH)
       {
           alerttype = "too high";
-      }
-      else 
-      {
-          alerttype = "normal";
-      }
-      SendMessage(recepient, message, alerttype));
+      }      
+      SendMessage(recepient, message, alerttype);
       return alerttype;
     }
     
