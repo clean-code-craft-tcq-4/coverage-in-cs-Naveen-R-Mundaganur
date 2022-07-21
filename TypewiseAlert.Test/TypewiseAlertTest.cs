@@ -41,7 +41,7 @@ namespace TypewiseAlert.Test
       
        try
     {
-        TypewiseAlert.checkAndAlert(TypewiseAlert.AlertTarget.TO_EMAIL, new TypewiseAlert.BatteryCharacter(TypewiseAlert.CoolingType.PASSIVE_COOLING),58.5d);
+        TypewiseAlert.checkAndAlert(TypewiseAlert.AlertTarget.TO_EMAIL, new TypewiseAlert.BatteryCharacter(TypewiseAlert.CoolingType.HI_ACTIVE_COOLING),42);
         Assert.True(true);
     }
     catch 
