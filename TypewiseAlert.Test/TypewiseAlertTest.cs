@@ -32,21 +32,21 @@ namespace TypewiseAlert.Test
      try
     {
         TypewiseAlert.checkAndAlert(TypewiseAlert.AlertTarget.TO_CONTROLLER, new TypewiseAlert.BatteryCharacter(TypewiseAlert.CoolingType.PASSIVE_COOLING),58.5d);
-        Assert.IsTrue(true);
+        Assert.True(true);
     }
     catch 
     {
-        Assert.IsTrue(false);
+        Assert.True(false);
     }
       
        try
     {
         TypewiseAlert.checkAndAlert(TypewiseAlert.AlertTarget.TO_EMAIL, new TypewiseAlert.BatteryCharacter(TypewiseAlert.CoolingType.PASSIVE_COOLING),58.5d);
-        Assert.IsTrue(true);
+        Assert.True(true);
     }
     catch 
     {
-        Assert.IsTrue(false);
+        Assert.True(false);
     }
 
       //Assert.True(TypewiseAlert.checkAndAlert(TypewiseAlert.AlertTarget.TO_CONTROLLER, new TypewiseAlert.BatteryCharacter(TypewiseAlert.CoolingType.PASSIVE_COOLING),58.5d));
