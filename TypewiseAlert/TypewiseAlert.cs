@@ -2,7 +2,7 @@
 
 namespace TypewiseAlert
 {
-  public class TypewiseAlert
+  public class BatteryTemperatureAlert
   {
     const double PASSIVE_COOLING_LOWER_LIMIT=0;
     const double HI_ACTIVE_COOLING_LOWER_LIMIT=0;
@@ -10,12 +10,14 @@ namespace TypewiseAlert
     const double PASSIVE_COOLING_UPPER_LIMIT=35;
     const double HI_ACTIVE_COOLING_UPPER_LIMIT=45;
     const double MED_ACTIVE_COOLING_UPPER_LIMIT=40;
+    
     public enum BreachType 
     {
       NORMAL,
       TOO_LOW,
       TOO_HIGH
     };
+    
     public static BreachType inferBreach(double value, double lowerLimit, double upperLimit) 
     {
       if(value < lowerLimit) 
@@ -28,12 +30,14 @@ namespace TypewiseAlert
       }
       return BreachType.NORMAL;
     }
+    
     public enum CoolingType 
     {
       PASSIVE_COOLING,
       HI_ACTIVE_COOLING,
       MED_ACTIVE_COOLING
     };
+    
     public static BreachType classifyTemperatureBreach(CoolingType coolingType, double temperatureInC) 
     {
       double lowerLimit = PASSIVE_COOLING_LOWER_LIMIT;
@@ -45,30 +49,16 @@ namespace TypewiseAlert
       else if(coolingType==CoolingType.MED_ACTIVE_COOLING)
       {
         upperLimit = MED_ACTIVE_COOLING_UPPER_LIMIT;
-      }
-      /*switch(coolingType) 
-      {
-        //case CoolingType.PASSIVE_COOLING:
-        //  lowerLimit = 0;
-        //  upperLimit = 35;
-        //  break;
-        case CoolingType.HI_ACTIVE_COOLING:
-          
-          upperLimit = 45;
-          break;
-        case CoolingType.MED_ACTIVE_COOLING:
-          //lowerLimit = 0;
-          upperLimit = 40;
-          break;
-      }
-      */
+      }     
       return inferBreach(temperatureInC, lowerLimit, upperLimit);
     }
+    
     public enum AlertTarget
     {
       TO_CONTROLLER,
       TO_EMAIL
     };
+    
     public struct BatteryCharacter 
     {
       public CoolingType coolingType;
@@ -81,6 +71,7 @@ namespace TypewiseAlert
            brand = "BMS";
        }
     }
+    
     public static void checkAndAlert(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC) 
     {
 
@@ -96,6 +87,7 @@ namespace TypewiseAlert
           break;
       }
     }
+    
     //Send Message to Controller
     public static void sendToController(BreachType breachType) 
     {
