@@ -58,6 +58,13 @@ namespace TypewiseAlert
     {
       public CoolingType coolingType;
       public string brand;
+      
+      //Constructor 
+       public BatteryCharacter(CoolingType colling_info)
+       {
+           coolingType = colling_info;
+           brand = "BMS";
+       }
     }
     public static void checkAndAlert(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC) 
     {
