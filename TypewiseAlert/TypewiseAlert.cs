@@ -78,7 +78,7 @@ namespace TypewiseAlert
     public static void sendToController(BreachType breachType) 
     {
       const ushort header = 0xfeed;
-      Console.WriteLine("{} : {}\n", header, breachType);
+      Console.WriteLine($"{header} : {breachType}\n");
     }
     
     //Send Email to Client
