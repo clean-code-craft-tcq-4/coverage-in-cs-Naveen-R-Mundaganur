@@ -26,7 +26,11 @@ namespace TypewiseAlert.Test
       //Email Validation
       Assert.True(TypewiseAlert.sendToEmail(TypewiseAlert.BreachType.TOO_LOW)=="too low");
       Assert.True(TypewiseAlert.sendToEmail(TypewiseAlert.BreachType.TOO_HIGH)=="too high");
-      Assert.True(TypewiseAlert.sendToEmail(TypewiseAlert.BreachType.NORMAL)=="normal");       
+      Assert.True(TypewiseAlert.sendToEmail(TypewiseAlert.BreachType.NORMAL)=="normal");    
+      
+      //Alert Check
+      Assert.True(TypewiseAlert.checkAndAlert(TypewiseAlert.AlertTarget.TO_CONTROLLER, new TypewiseAlert.BatteryCharacter(TypewiseAlert.CoolingType.PASSIVE_COOLING),58.5d);
+      Assert.True(TypewiseAlert.checkAndAlert(TypewiseAlert.AlertTarget.TO_EMAIL, new TypewiseAlert.BatteryCharacter(TypewiseAlert.CoolingType.HI_ACTIVE_COOLING), 42);
         
     }
   }
